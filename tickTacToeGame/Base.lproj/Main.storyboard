@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XnF-v8-UWj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Play View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayViewController" customModule="tickTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX4-mA-jHK">
+                                <rect key="frame" x="20" y="305.5" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.1960784314" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="L70-Kh-8Ap"/>
+                                </constraints>
+                                <state key="normal" title="Play Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RrZ-aP-33Q"/>
+                                    <segue destination="Z4i-Z5-Qng" kind="show" id="umI-QY-l62"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZX4-mA-jHK" secondAttribute="trailing" constant="20" id="GVn-sI-vRM"/>
+                            <constraint firstItem="ZX4-mA-jHK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8k-7a-5cu"/>
+                            <constraint firstItem="ZX4-mA-jHK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Mgu-2k-j1b"/>
+                            <constraint firstItem="ZX4-mA-jHK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jBv-6F-543"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OjD-yj-h2j"/>
+                    <connections>
+                        <outlet property="playButton" destination="ZX4-mA-jHK" id="zHs-bJ-bgN"/>
+                        <outlet property="playModal" destination="exa-Ml-Bi4" id="Nfc-hU-RFL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="exa-Ml-Bi4" customClass="PlayModal" customModule="tickTacToeGame" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="777"/>
+        </scene>
+        <!--Game Begins-->
+        <scene sceneID="teB-Ff-QNk">
+            <objects>
+                <viewController id="Z4i-Z5-Qng" customClass="GameUIViewController" customModule="tickTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ykc-BV-O1O"/>
+                        <viewControllerLayoutGuide type="bottom" id="ueF-r8-X2W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IE1-Ti-tmV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-uz-IVb">
+                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xly-gQ-yZZ">
+                                        <rect key="frame" x="10" y="85" width="260" height="10"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="3fJ-i9-1kY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwH-tS-B1w">
+                                        <rect key="frame" x="10" y="185" width="260" height="10"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="Cnw-Ra-EvU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="In9-mk-sH0">
+                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="08R-Ln-WmB"/>
+                                            <constraint firstAttribute="height" constant="50" id="Qdo-bK-w1P"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="Qoj-5w-Dx8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNL-2X-nBi">
+                                        <rect key="frame" x="15" y="115" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bFs-n0-I1E"/>
+                                            <constraint firstAttribute="width" constant="50" id="xSJ-nb-2Gv"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="xZB-J9-0yg"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hus-vk-iph">
+                                        <rect key="frame" x="85" y="10" width="10" height="260"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="nvl-Vf-wVs"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meY-t6-oJw">
+                                        <rect key="frame" x="185" y="10.5" width="10" height="260"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="Dch-5M-KeZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="ahK-0L-IYS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdh-0C-JlX">
+                                        <rect key="frame" x="115" y="15" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="OQo-dM-Amg"/>
+                                            <constraint firstAttribute="height" constant="50" id="YUi-8W-WhZ"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="gn9-k5-Qn4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBT-7Y-zuT">
+                                        <rect key="frame" x="215" y="14.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5yk-Lw-VGV"/>
+                                            <constraint firstAttribute="width" constant="50" id="xsJ-To-vaB"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="x33-ea-k9b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-jg-Hoe">
+                                        <rect key="frame" x="215" y="114.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BMs-zH-poK"/>
+                                            <constraint firstAttribute="width" constant="50" id="nen-qU-WE0"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="ooA-hh-Kmz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-3I-HaN">
+                                        <rect key="frame" x="215" y="214.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="cYb-sW-fQb"/>
+                                            <constraint firstAttribute="height" constant="50" id="kJo-w4-YWu"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="S12-bR-wfe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUS-Iv-hSm">
+                                        <rect key="frame" x="15" y="215" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="8Bz-LK-ww8"/>
+                                            <constraint firstAttribute="height" constant="50" id="drk-pm-Goy"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="abT-J5-cBN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8j-yN-tZ7">
+                                        <rect key="frame" x="115" y="115" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="MGl-q4-YCr"/>
+                                            <constraint firstAttribute="height" constant="50" id="R9N-ba-wjE"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="deI-ZM-8nK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-KZ-9UP">
+                                        <rect key="frame" x="115" y="215" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="epI-lb-6fe"/>
+                                            <constraint firstAttribute="width" constant="50" id="gYC-bN-DIw"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                        <connections>
+                                            <action selector="gameAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="Otc-ux-FNT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Hus-vk-iph" firstAttribute="leading" secondItem="MNL-2X-nBi" secondAttribute="trailing" constant="20" id="2oP-zN-jCS"/>
+                                    <constraint firstAttribute="trailing" secondItem="BwH-tS-B1w" secondAttribute="trailing" constant="10" id="49E-eg-ra4"/>
+                                    <constraint firstItem="dBT-7Y-zuT" firstAttribute="leading" secondItem="meY-t6-oJw" secondAttribute="trailing" constant="20" id="5NT-TC-Ipv"/>
+                                    <constraint firstItem="BwH-tS-B1w" firstAttribute="top" secondItem="MNL-2X-nBi" secondAttribute="bottom" constant="20" id="5iP-ax-HFE"/>
+                                    <constraint firstItem="cdb-3I-HaN" firstAttribute="leading" secondItem="meY-t6-oJw" secondAttribute="trailing" constant="20" id="CBt-E4-Y5V"/>
+                                    <constraint firstItem="Hdh-0C-JlX" firstAttribute="top" secondItem="aLb-uz-IVb" secondAttribute="top" constant="15" id="E6j-6f-4o4"/>
+                                    <constraint firstItem="Hdh-0C-JlX" firstAttribute="leading" secondItem="Hus-vk-iph" secondAttribute="trailing" constant="20" id="H2q-nf-Jtl"/>
+                                    <constraint firstItem="xly-gQ-yZZ" firstAttribute="leading" secondItem="aLb-uz-IVb" secondAttribute="leading" constant="10" id="Hww-6S-RLO"/>
+                                    <constraint firstItem="BwH-tS-B1w" firstAttribute="leading" secondItem="aLb-uz-IVb" secondAttribute="leading" constant="10" id="Ju1-yk-tbP"/>
+                                    <constraint firstAttribute="trailing" secondItem="xly-gQ-yZZ" secondAttribute="trailing" constant="10" id="K5G-9i-gvF"/>
+                                    <constraint firstItem="MNL-2X-nBi" firstAttribute="leading" secondItem="aLb-uz-IVb" secondAttribute="leading" constant="15" id="KBp-VO-TWc"/>
+                                    <constraint firstItem="xly-gQ-yZZ" firstAttribute="top" secondItem="In9-mk-sH0" secondAttribute="bottom" constant="20" id="LWm-G7-uHH"/>
+                                    <constraint firstItem="BwH-tS-B1w" firstAttribute="top" secondItem="d8j-yN-tZ7" secondAttribute="bottom" constant="20" id="Mf2-hb-bvw"/>
+                                    <constraint firstItem="HUS-Iv-hSm" firstAttribute="top" secondItem="BwH-tS-B1w" secondAttribute="bottom" constant="20" id="R06-GT-2yF"/>
+                                    <constraint firstItem="O5u-KZ-9UP" firstAttribute="leading" secondItem="Hus-vk-iph" secondAttribute="trailing" constant="20" id="XIV-nK-E8y"/>
+                                    <constraint firstAttribute="bottom" secondItem="meY-t6-oJw" secondAttribute="bottom" constant="10" id="Ykr-lT-mFc"/>
+                                    <constraint firstItem="In9-mk-sH0" firstAttribute="top" secondItem="aLb-uz-IVb" secondAttribute="top" constant="15" id="YwE-Vv-zgf"/>
+                                    <constraint firstAttribute="height" constant="280" id="Zc7-3B-NbE"/>
+                                    <constraint firstItem="xly-gQ-yZZ" firstAttribute="top" secondItem="dBT-7Y-zuT" secondAttribute="bottom" constant="20" id="b3w-wP-IoE"/>
+                                    <constraint firstItem="meY-t6-oJw" firstAttribute="top" secondItem="aLb-uz-IVb" secondAttribute="top" constant="10" id="cJR-9j-o5Q"/>
+                                    <constraint firstItem="yGt-jg-Hoe" firstAttribute="leading" secondItem="meY-t6-oJw" secondAttribute="trailing" constant="20" id="cNe-KR-kAu"/>
+                                    <constraint firstItem="HUS-Iv-hSm" firstAttribute="leading" secondItem="aLb-uz-IVb" secondAttribute="leading" constant="15" id="eTk-9U-fCm"/>
+                                    <constraint firstItem="d8j-yN-tZ7" firstAttribute="leading" secondItem="Hus-vk-iph" secondAttribute="trailing" constant="20" id="en3-Hr-mi5"/>
+                                    <constraint firstItem="Hus-vk-iph" firstAttribute="leading" secondItem="HUS-Iv-hSm" secondAttribute="trailing" constant="20" id="gFN-IQ-EcY"/>
+                                    <constraint firstItem="In9-mk-sH0" firstAttribute="leading" secondItem="aLb-uz-IVb" secondAttribute="leading" constant="15" id="gM9-aE-e5A"/>
+                                    <constraint firstItem="meY-t6-oJw" firstAttribute="leading" secondItem="O5u-KZ-9UP" secondAttribute="trailing" constant="20" id="hc7-LK-854"/>
+                                    <constraint firstItem="O5u-KZ-9UP" firstAttribute="top" secondItem="BwH-tS-B1w" secondAttribute="bottom" constant="20" id="l1O-QX-stV"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hus-vk-iph" secondAttribute="bottom" constant="10" id="nId-Lx-Cye"/>
+                                    <constraint firstItem="yGt-jg-Hoe" firstAttribute="top" secondItem="xly-gQ-yZZ" secondAttribute="bottom" constant="20" id="quw-2L-DP7"/>
+                                    <constraint firstItem="cdb-3I-HaN" firstAttribute="top" secondItem="BwH-tS-B1w" secondAttribute="bottom" constant="20" id="qvG-Qk-lXD"/>
+                                    <constraint firstItem="d8j-yN-tZ7" firstAttribute="top" secondItem="xly-gQ-yZZ" secondAttribute="bottom" constant="20" id="rfk-9W-dMB"/>
+                                    <constraint firstItem="MNL-2X-nBi" firstAttribute="top" secondItem="xly-gQ-yZZ" secondAttribute="bottom" constant="20" id="tHg-u9-9Rs"/>
+                                    <constraint firstAttribute="width" constant="280" id="tqd-Ai-j6m"/>
+                                    <constraint firstItem="Hus-vk-iph" firstAttribute="top" secondItem="aLb-uz-IVb" secondAttribute="top" constant="10" id="v9h-ob-JK0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-qE-avz">
+                                <rect key="frame" x="20" y="79" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BBp-4K-Q4n"/>
+                                    <constraint firstAttribute="height" constant="50" id="teD-Yv-5xp"/>
+                                </constraints>
+                                <state key="normal" image="pikachu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-cs-7tA">
+                                <rect key="frame" x="305" y="79" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Ng-93-aZv"/>
+                                    <constraint firstAttribute="width" constant="50" id="gC7-Dt-FFE"/>
+                                </constraints>
+                                <state key="normal" image="psyduck"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrD-CB-1X5">
+                                <rect key="frame" x="172.5" y="582" width="30" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3d1-oz-Fjf"/>
+                                    <constraint firstAttribute="height" constant="35" id="xJE-Pb-rG7"/>
+                                </constraints>
+                                <state key="normal" image="clear"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="Z4i-Z5-Qng" eventType="touchUpInside" id="zrA-r5-GVZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aLb-uz-IVb" firstAttribute="centerX" secondItem="IE1-Ti-tmV" secondAttribute="centerX" id="3Cd-tb-ka1"/>
+                            <constraint firstItem="Mxv-qE-avz" firstAttribute="top" secondItem="Ykc-BV-O1O" secondAttribute="bottom" constant="15" id="4r1-kh-2yi"/>
+                            <constraint firstItem="ueF-r8-X2W" firstAttribute="top" secondItem="UrD-CB-1X5" secondAttribute="bottom" constant="50" id="9P0-ws-MdJ"/>
+                            <constraint firstItem="gUd-cs-7tA" firstAttribute="top" secondItem="Ykc-BV-O1O" secondAttribute="bottom" constant="15" id="RAW-ek-JqP"/>
+                            <constraint firstItem="aLb-uz-IVb" firstAttribute="centerY" secondItem="IE1-Ti-tmV" secondAttribute="centerY" id="ogc-Mr-68V"/>
+                            <constraint firstItem="Mxv-qE-avz" firstAttribute="leading" secondItem="IE1-Ti-tmV" secondAttribute="leading" constant="20" id="t7Y-YB-avO"/>
+                            <constraint firstAttribute="trailing" secondItem="gUd-cs-7tA" secondAttribute="trailing" constant="20" id="ygo-y3-kmU"/>
+                            <constraint firstItem="UrD-CB-1X5" firstAttribute="centerX" secondItem="IE1-Ti-tmV" secondAttribute="centerX" id="yhf-7Z-5n5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game Begins" id="gaB-7N-NR8"/>
+                    <connections>
+                        <outlet property="clearButton" destination="UrD-CB-1X5" id="Nfa-bF-iZP"/>
+                        <outlet property="gameModalView" destination="fXT-cA-99r" id="wWn-mQ-AVC"/>
+                        <outlet property="gameView" destination="aLb-uz-IVb" id="WtH-v7-acz"/>
+                        <outlet property="pikachuButton" destination="Mxv-qE-avz" id="api-P6-Z3t"/>
+                        <outlet property="psyduckButton" destination="gUd-cs-7tA" id="QSP-ne-3bZ"/>
+                        <outletCollection property="gameButton" destination="In9-mk-sH0" collectionClass="NSMutableArray" id="Qoh-R3-yiC"/>
+                        <outletCollection property="gameButton" destination="Hdh-0C-JlX" collectionClass="NSMutableArray" id="I39-V9-V1V"/>
+                        <outletCollection property="gameButton" destination="dBT-7Y-zuT" collectionClass="NSMutableArray" id="xlW-1z-riX"/>
+                        <outletCollection property="gameButton" destination="MNL-2X-nBi" collectionClass="NSMutableArray" id="ZPK-77-jt6"/>
+                        <outletCollection property="gameButton" destination="d8j-yN-tZ7" collectionClass="NSMutableArray" id="Sfn-or-EDc"/>
+                        <outletCollection property="gameButton" destination="yGt-jg-Hoe" collectionClass="NSMutableArray" id="OcH-1E-b5V"/>
+                        <outletCollection property="gameButton" destination="HUS-Iv-hSm" collectionClass="NSMutableArray" id="ELC-go-oBB"/>
+                        <outletCollection property="gameButton" destination="O5u-KZ-9UP" collectionClass="NSMutableArray" id="8G6-wI-WCR"/>
+                        <outletCollection property="gameButton" destination="cdb-3I-HaN" collectionClass="NSMutableArray" id="VCU-6I-ki9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3A-lD-Ti6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="cS7-Id-JGr" customClass="GameModal" customModule="tickTacToeGame" customModuleProvider="target"/>
+                <customObject id="fXT-cA-99r" customClass="GameModalView" customModule="tickTacToeGame" customModuleProvider="target">
+                    <connections>
+                        <outlet property="gameModal" destination="cS7-Id-JGr" id="cMd-NI-bT3"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1517.5999999999999" y="775.86206896551732"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tho-D8-Vu0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XnF-v8-UWj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JWE-6a-Qj6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dU0-ga-br4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYu-ob-fPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="776.76161919040487"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cross" width="128" height="128"/>
+        <image name="clear" width="128" height="128"/>
+        <image name="pikachu" width="64" height="64"/>
+        <image name="psyduck" width="64" height="64"/>
+    </resources>
+</document>
